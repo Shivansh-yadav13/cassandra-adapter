@@ -1,0 +1,77 @@
+{
+  "name": "casbin-cassandra-adapter",
+  "version": "1.0.0",
+  "description": "Cassandara adapter for Casbin",
+  "main": "lib/cjs/index.js",
+  "typings": "lib/cjs/index.d.ts",
+  "module": "esnext",
+  "target": "es2017",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/node-casbin/mongoose-adapter",
+  "author": {
+    "name": "Node-Casbin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/node-casbin/mongoose-adapter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/node-casbin/mongoose-adapter/issues"
+  },
+  "keywords": [
+    "casbin",
+    "node-casbin",
+    "adapter",
+    "cassandra",
+    "access-control",
+    "authorization",
+    "auth",
+    "authz",
+    "acl",
+    "rbac",
+    "abac"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "publishConfig": {
+    "tag": "latest",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "build": "run-s clean && run-p build:*",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "casbin": "^5.11.5",
+    "jest": "^29.0.2",
+    "ts-jest": "^28.0.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "cassandra-driver": "^4.6.4"
+  },
+  "peerDependencies": {
+    "casbin": "^5.13.2"
+  },
+  "jest": {
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/test/*.+(ts|tsx)"
+    ]
+  },
+  "files": [
+    "lib",
+    "test",
+    "examples"
+  ]
+}
